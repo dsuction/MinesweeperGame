@@ -100,7 +100,7 @@ class Sapper:
         else:
             table_copy[y][x] = '[yellow] # '
 
-        rich_table = Table(title='ПОЛЕ', box=box.DOUBLE, show_header=False, show_lines=True)
+        rich_table = Table(title='BOARD', box=box.DOUBLE, show_header=False, show_lines=True)
 
         for _ in range(len(self.table)):
             rich_table.add_column()
@@ -111,11 +111,11 @@ class Sapper:
 
     def check_result_game(self) -> None:
         if not self.running:
-            self.console.print('ВЫ ПРОИГРАЛИ', style=DANGER_STYLE)
+            self.console.print("YOU LOSE", style=DANGER_STYLE)
             return
 
         if sum([row.count(' ') + row.count('f') for row in self.table]) == len(self.pos_bomb):
-            self.console.print('ВЫ ВЫИГРАЛИ', style=WIN_STYLE)
+            self.console.print('YOU WON', style=WIN_STYLE)
             self.running = False
 
     @staticmethod
@@ -132,7 +132,7 @@ class Sapper:
 
 
 def get_size(console: Console) -> int:
-    console.print('Введите размер поля от [green]4[/green] до [green]16[/green]: ', style='blue', end='')
+    console.print('Enter the board size from [green]4[/green] to [green]16[/green]: ', style='blue', end='')
     while True:
         size = input()
         if size.isdigit():
@@ -140,24 +140,24 @@ def get_size(console: Console) -> int:
                 break
             else:
                 if int(size) < 5:
-                    console.print('Число должно быть больше либо равно 5 :warning:', style=DANGER_STYLE)
+                    console.print('The number must be greater than or equal to 5 :warning:', style=DANGER_STYLE)
                 else:
-                    console.print('Число должно быть меньше либо равно 16 :warning:', style=DANGER_STYLE)
+                    console.print('The number must be less than or equal to 16 :warning:', style=DANGER_STYLE)
         else:
-            console.print('Некорректный ввод, введите число :warning:', style=DANGER_STYLE)
+            console.print('Incorrect input, enter a new number :warning:', style=DANGER_STYLE)
     console.print('[green]ok[/green]')
     return int(size)
 
 
 def get_event(console: Console) -> str:
-    console.print('Движениe - [green]wasd[/green], поставить флаг - [green]f[/green],'
-                  ' открыть клетку - [green]e[/green]', style='blue')
-    console.print('Введите команду: ', end='', style='blue')
+    console.print('movement - [green]wasd[/green], put up a flag - [green]f[/green],'
+                  ' open the cage - [green]e[/green]', style='blue')
+    console.print('Enter the command: ', end='', style='blue')
     while True:
         event = input()
         if event in list('wasdfe'):
             break
-        console.print('Нет такой команды :warning:', style=DANGER_STYLE)
+        console.print('there is no such command :warning:', style=DANGER_STYLE)
     return event
 
 
