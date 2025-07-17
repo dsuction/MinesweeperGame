@@ -18,15 +18,15 @@ Game display examples:
 *Shows an empty game board at the beginning of the game.*
 
 ### Gameplay
-![Game board with opened cells and flags.](https://github.com/dsuction/MinesweeperGame.git/raw/main/images/image_2.png)
+![Game board with opened cells and flags.](https://raw.githubusercontent.com/dsuction/MinesweeperGame/main/images/image_2.png)
 *Demonstrates cells with numbers and placed flags.*
 
 ### Game Over
-![Game board after a loss with mines revealed.](https://github.com/dsuction/MinesweeperGame.git/raw/main/images/image_4.png)
+![Game board after a loss with mines revealed.](https://raw.githubusercontent.com/dsuction/MinesweeperGame/main/images/image_4.png)
 *Displays the exploded mine and the location of all mines.*
 
 ### Victory
-![Victory screen.](https://github.com/dsuction/MinesweeperGame.git/raw/main/images/image_3.png)
+![Victory screen.](https://raw.githubusercontent.com/dsuction/MinesweeperGame/main/images/image_3.png)
 *Shows the win message and a fully revealed board.*
 
 ## How to Run The Project
